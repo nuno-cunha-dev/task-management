@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "8847c232-5568-4d13-8abc-b5a9796e2224",
+		"name": "Task Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all tasks",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tasks?search=test&status=OPEN",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "test"
+						},
+						{
+							"key": "status",
+							"value": "OPEN"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create task",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "Tarefa teste 1",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "Desenvolver o task manager",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get task by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tasks/0f96fc1c-abe3-4609-a0f9-ad6c86ee9fd2",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"0f96fc1c-abe3-4609-a0f9-ad6c86ee9fd2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete task by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/tasks/0bd5c7d6-cea1-4d4b-b4ce-9d264f509b3a",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"0bd5c7d6-cea1-4d4b-b4ce-9d264f509b3a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update task status",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "status",
+							"value": "IN_PROGRESS",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{base_url}}/tasks/2ef2ac3a-65e4-4918-a175-18827cebbfe0/status",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"tasks",
+						"2ef2ac3a-65e4-4918-a175-18827cebbfe0",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
